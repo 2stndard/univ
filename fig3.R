@@ -38,3 +38,4 @@ df.spagetti |>
   theme(legend.position = 'bottom') +
   theme(strip.text.x = element_text(size = 15))
 
+
