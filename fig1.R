@@ -37,11 +37,11 @@ df |>
   geom_text(aes(y = 전체입학자, 
                 label = paste0(round(전체입학자/1000, 0), 'k')), vjust = 2, color = 'grey50') +
   labs(y = '학생수') +
+  geom_vline(aes(xintercept = 11), color = 'grey80', linetype = 2) +
   annotate('rect', xmin = 8.5, xmax = 13.5, ymin = 380000, ymax = 580000, alpha = 0.2) +
   annotate('rect', xmin = 23.5, xmax = 27.5, ymin = 260000, ymax = 380000, alpha = 0.2) +
   annotate('text', x = 11, y = 620000, label = '1차 충격') + 
   annotate('segment', x = 11, y = 600000, xend = 11, yend = 580000, arrow = arrow(length = unit(0.01, "npc"))) + 
   annotate('text', x = 22, y = 325000, label = '2차 충격') + 
-  annotate('segment', x = 23, y = 325000, xend = 23.5, yend = 325000, arrow = arrow(length = unit(0.01, "npc"))) + 
-  geom_vline(aes(xintercept = 11), color = 'grey80', linetype = 2)
+  annotate('segment', x = 23, y = 325000, xend = 23.5, yend = 325000, arrow = arrow(length = unit(0.01, "npc")))
   
