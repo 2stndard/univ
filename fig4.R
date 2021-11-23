@@ -43,13 +43,13 @@ df.강사비율 |>
              linetype = 2) +
   annotate('text', x = mean(range(as.integer(df.강사비율$시도1))), y = mean.전임강사비율, 
            label = paste0(facet.연도, ' 전임강사 비율 평균 :', mean.전임강사비율)) +
-  labs(title = facet.연도, x = '') -> p
+  labs(title = facet.연도, x = '') + labs(fill = '채용비율')-> p
 
 plot_list[[i]] <- p
 
 }
 
 
-(plot_list[[1]] +  plot_list[[2]]) / (plot_list[[3]] + plot_list[[4]]) / (plot_list[[5]] +  plot_list[[6]]) / (plot_list[[7]] + plot_list[[8]]) / (plot_list[[9]] +  plot_list[[10]])  + plot_layout(guides = "collect") -> ggplot.pdf
+(plot_list[[1]] +  plot_list[[2]]) / (plot_list[[3]] + plot_list[[4]]) / (plot_list[[5]] +  plot_list[[6]]) / (plot_list[[7]] + plot_list[[8]]) / (plot_list[[9]] +  plot_list[[10]])  + plot_layout(guides = "collect")
 
 ggsave('2.pdf', w = 24, h = 15, units = 'in', dpi = 1200)

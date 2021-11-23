@@ -33,8 +33,8 @@ df.dumbell |>
   geom_text(aes(x = 시도, label = ifelse(pos == '증가', paste0(증감률, '%p'), NA)), vjust = -1.5) +
   theme(legend.position="bottom") +
   ylim(-20, 1)  + 
-  scale_color_manual(values = c('red', 'blue')) +
-  labs(title = '2019년 대비 2021년 지역별 고등교육기관 입학생수 증감율', y = '증감율(%p)', color = '증감') +
+  scale_color_manual(values = c('blue', 'red')) +
+  labs(y = '증감율(%p)', color = '증감') +
   theme_bw()
 
 
