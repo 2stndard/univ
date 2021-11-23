@@ -7,15 +7,15 @@ if(!require(showtext)) {
 
 showtext_auto()
 
-df <- read_excel('../univ1/합본.xlsx', skip = 4, na = '-', col_names = T, col_types = c(rep('text', 14), rep('numeric', 60)))
+df <- read_excel('../univ_data/학교별합본.xlsx', skip = 4, na = '-', col_names = T, col_types = c(rep('text', 14), rep('numeric', 60)))
 
-df.미래 <- read_excel('../univ1/미래.xlsx', na = '-', col_names = F, col_types = c('numeric', 'numeric', 'numeric'))
+df.미래 <- read_excel('./미래.xlsx', na = '-', col_names = F, col_types = c('numeric', 'numeric', 'numeric'))
 
 names(df.미래) <- c('연도', '학생수', '정원')
 
 df.미래 |>
-  group_by(입학년도) |>
-  summarise(입학연령인구 = sum(인구수), 입학정원 = 474996)
+  group_by(연도) |>
+  summarise(입학연령인구 = sum(학생수), 입학정원 = 474996)
 
 df <- df[, -c(10:14)]
 
